@@ -31,7 +31,7 @@ Feature: Users should be able to login
 #    Then user selects Vehicle Cost option from Fleet menu
 
 
-  @wip_bakhrom
+
   Scenario Outline: Fleet options verification
     Given user is on the login page
     When user enters the managers "<username>" and "<password>" information
@@ -44,6 +44,18 @@ Feature: Users should be able to login
       | storemanager85  | UserUser123 |
 
 
-
-#  Scenario: Select All Vehicle Costs verification
-#    When
+  @wip_bakhrom
+  Scenario Outline: Select All Vehicle Costs verification
+    Given user is on the login page
+    When user enters the managers "<username>" and "<password>" information
+    And user should be able to login
+    And user clicks Fleet option from top menu
+    And user selects Vehicle Cost option from Fleet menu
+    Then user sees expected list of columns
+      | TYPE        |
+      | TOTAL PRICE |
+      | DATE        |
+    Examples:
+      | username        | password    |
+      | salesmanager101 | UserUser123 |
+      | storemanager85  | UserUser123 |

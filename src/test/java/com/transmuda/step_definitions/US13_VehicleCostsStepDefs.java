@@ -5,6 +5,7 @@ import com.transmuda.pages.VehicleCostsPage;
 import com.transmuda.utilities.BrowserUtils;
 import com.transmuda.utilities.ConfigurationReader;
 import com.transmuda.utilities.Driver;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -13,6 +14,9 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.interactions.Actions;
+
+import java.util.Collections;
+import java.util.List;
 
 public class US13_VehicleCostsStepDefs {
 
@@ -48,7 +52,7 @@ public class US13_VehicleCostsStepDefs {
 
     @Then("user should be able to login")
     public void user_should_be_able_to_login() {
-        BrowserUtils.sleep(10);
+        BrowserUtils.waitForPageToLoad(5);
 //        Alert alert = Driver.getDriver().switchTo().alert();
 //        alert.accept();
 //        BrowserUtils.sleep(2);
@@ -74,4 +78,12 @@ public class US13_VehicleCostsStepDefs {
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Vehicle Costs"));
     }
 
+
+
+    @Then("user sees expected list of columns")
+    public void userSeesExpectedColumns(DataTable dataTable) {
+        List<String> expectedColumns = dataTable.asList();
+        List<String> actualColumns = vehicleCostsPage.getColumnNames();
+        Assert.assertEquals(actualColumns, expectedColumns);
+    }
 }
