@@ -6,19 +6,16 @@ import com.transmuda.utilities.BrowserUtils;
 import com.transmuda.utilities.ConfigurationReader;
 import com.transmuda.utilities.Driver;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.interactions.Actions;
 
-import java.util.Collections;
 import java.util.List;
 
-public class US13_VehicleCostsStepDefs {
+public class US163_VehicleCostsStepDefs {
 
     LoginPage loginPage = new LoginPage();
     VehicleCostsPage vehicleCostsPage = new VehicleCostsPage();

@@ -44,7 +44,7 @@ Feature: Users should be able to login
       | storemanager85  | UserUser123 |
 
 
-  @wip
+  @wip_bakhrom
   Scenario Outline: Select All Vehicle Costs verification
     Given user is on the login page
     When user enters the managers "<username>" and "<password>" information
