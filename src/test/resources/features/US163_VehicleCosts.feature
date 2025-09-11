@@ -36,12 +36,11 @@ Feature: Users should be able to login
     Given user is on the login page
     When user enters the managers "<username>" and "<password>" information
     And user should be able to login
-    And user clicks Fleet option from top menu
     Then user selects Vehicle Cost option from Fleet menu
     Examples:
       | username        | password    |
-      | salesmanager101 | UserUser123 |
-      | storemanager85  | UserUser123 |
+      | salesmanager111 | UserUser123 |
+      | storemanager75  | UserUser123 |
 
 
   @wip_bakhrom
@@ -49,13 +48,13 @@ Feature: Users should be able to login
     Given user is on the login page
     When user enters the managers "<username>" and "<password>" information
     And user should be able to login
-    And user clicks Fleet option from top menu
     And user selects Vehicle Cost option from Fleet menu
     Then user sees expected list of columns
       | TYPE        |
       | TOTAL PRICE |
       | DATE        |
+    Then user should select checkbox to select All vehicle Costs
     Examples:
       | username        | password    |
-      | salesmanager101 | UserUser123 |
-      | storemanager85  | UserUser123 |
+      | salesmanager111 | UserUser123 |
+      | storemanager75  | UserUser123 |
