@@ -49,7 +49,7 @@ public class US163_VehicleCostsStepDefs {
 
     @Then("user should be able to login")
     public void user_should_be_able_to_login() {
-        BrowserUtils.waitForPageToLoad(5);
+        BrowserUtils.sleep(5);
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Dashboard"));
     }
 
